@@ -1,0 +1,4 @@
+-cp src
+-D telegram-bot=0.0.0
+
+-lib tink_web
