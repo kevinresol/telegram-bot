@@ -81,8 +81,9 @@ interface Api {
 	// @:post function setGameScore(userId:String, score:Float, ?options:SetGameScoreOptions):ts.AnyOf2<Bool, MessageResult<>>;
 	// @:post function getGameHighScores(userId:String, ?options:GetGameHighScoresOptions):Array<GameHighScoreResult<>>;
 	// @:post function deleteMessage(chatId:ts.AnyOf2<String, Float>, messageId:String, ?options:Dynamic):Result<Bool>;
-	// @:post function sendInvoice(chatId:ts.AnyOf2<String, Float>, title:String, description:String, payload:String, providerToken:String, startParameter:String, currency:String, prices:haxe.ds.ReadOnlyArray<LabeledPrice>, ?options:SendInvoiceOptions):Result<Message>;
+	@:post function sendInvoice(body:SendInvoiceOptions):Result<Message>;
 	// @:post function answerShippingQuery(shippingQueryId:String, ok:Bool, ?options:AnswerShippingQueryOptions):Result<Bool>;
+	@:post function answerPreCheckoutQuery(body:AnswerPreCheckoutQueryOptions):Result<Bool>;
 	// @:post function setChatPermissions(chatId:ts.AnyOf2<String, Float>, chatPermissions:ChatPermissions):Result<Bool>;
 	// @:post function setChatAdministratorCustomTitle(chatId:ts.AnyOf2<String, Float>, userId:String, customTitle:String):Result<Bool>;
 	// @:post function getMyCommands():Array<BotCommandResult<>>;

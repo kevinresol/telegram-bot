@@ -1,6 +1,14 @@
 package telegram.bot.types;
 
-typedef SendInvoiceOptions = {
+typedef SendInvoiceOptions = SendBasicOptions & {
+	final chat_id:Int;
+	final title:String;
+	final description:String;
+	final payload:String;
+	final provider_token:String;
+	final start_parameter:String;
+	final currency:String;
+	final prices:Array<LabeledPrice>;
 	final ?provider_data : String;
 	final ?photo_url : String;
 	final ?photo_size : Float;
@@ -11,7 +19,4 @@ typedef SendInvoiceOptions = {
 	final ?need_email : Bool;
 	final ?need_shipping_address : Bool;
 	final ?is_flexible : Bool;
-	final ?disable_notification : Bool;
-	final ?reply_to_message_id : Int;
-	final ?reply_markup : ts.AnyOf4<InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove, ForceReply>;
 };

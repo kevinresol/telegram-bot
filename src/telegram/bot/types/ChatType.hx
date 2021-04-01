@@ -1,3 +1,8 @@
 package telegram.bot.types;
 
-typedef ChatType = String;
+enum abstract ChatType(String) to String {
+	final Private = 'private';
+	final Group = 'group';
+	final Supergroup = 'supergroup';
+	final Channel = 'channel';
+}

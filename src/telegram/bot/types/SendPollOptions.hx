@@ -1,6 +1,6 @@
 package telegram.bot.types;
 
-typedef SendPollOptions = {
+typedef SendPollOptions = SendBasicOptions & {
 	final ?is_anonymous : Bool;
 	final ?type : PollType;
 	final ?allows_multiple_answers : Bool;
@@ -10,7 +10,4 @@ typedef SendPollOptions = {
 	final ?open_period : Float;
 	final ?close_date : Float;
 	final ?is_closed : Bool;
-	final ?disable_notification : Bool;
-	final ?reply_to_message_id : Int;
-	final ?reply_markup : ts.AnyOf4<InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove, ForceReply>;
 };
