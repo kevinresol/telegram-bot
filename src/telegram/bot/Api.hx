@@ -53,8 +53,8 @@ interface Api {
 	// @:post function unpinChatMessage(chatId:ts.AnyOf2<String, Float>):Result<Bool>;
 	// @:post function unpinAllChatMessages(chatId:ts.AnyOf2<String, Float>):Result<Bool>;
 	@:post function answerCallbackQuery(body:AnswerCallbackQueryOptions):Result<Bool>;
-	@:post function editMessageText(body:EditMessageTextOptions):Result<Message>; // or Bool
-	// @:post function editMessageCaption(caption:String, ?options:EditMessageCaptionOptions):ts.AnyOf2<Bool, MessageResult<>>;
+	@:post function editMessageText(body:EditMessageTextOptions):Result<Message>; // TODO: or Bool
+	@:post function editMessageCaption(body:EditMessageCaptionOptions):Result<Message>; // TODO: or Bool
 	// @:post function editMessageReplyMarkup(replyMarkup:InlineKeyboardMarkup, ?options:EditMessageReplyMarkupOptions):ts.AnyOf2<Bool, MessageResult<>>;
 	// @:post function getUserProfilePhotos(userId:ts.AnyOf2<String, Float>, ?options:GetUserProfilePhotosOptions):Result<UserProfilePhotos>;
 	// @:post function sendLocation(chatId:ts.AnyOf2<String, Float>, latitude:Float, longitude:Float, ?options:SendBasicOptions):Result<Message>;
