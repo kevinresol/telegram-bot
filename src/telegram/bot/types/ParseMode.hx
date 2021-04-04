@@ -1,3 +1,7 @@
 package telegram.bot.types;
 
-typedef ParseMode = String;
+enum abstract ParseMode(String) to String {
+	final MarkdownV2;
+	final Markdown;
+	final HTML;
+}
