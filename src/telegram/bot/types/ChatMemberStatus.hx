@@ -1,3 +1,11 @@
 package telegram.bot.types;
 
-typedef ChatMemberStatus = String;
+enum abstract ChatMemberStatus(String) to String {
+	final Creator = 'creator';
+	final Administrator = 'administrator';
+	final Member = 'member';
+	final Restricted = 'restricted';
+	final Left = 'left';
+	final Kicked = 'kicked';
+}
+
