@@ -39,7 +39,7 @@ interface Api {
 	// @:post function sendVideo(chatId:ts.AnyOf2<String, Float>, video:ts.AnyOf3<String, global.Buffer, node.stream.Stream>, ?options:SendVideoOptions):Result<Message>;
 	// @:post function sendVideoNote(chatId:ts.AnyOf2<String, Float>, videoNote:ts.AnyOf3<String, global.Buffer, node.stream.Stream>, ?options:SendVideoNoteOptions):Result<Message>;
 	// @:post function sendVoice(chatId:ts.AnyOf2<String, Float>, voice:ts.AnyOf3<String, global.Buffer, node.stream.Stream>, ?options:SendVoiceOptions):Result<Message>;
-	// @:post function sendChatAction(chatId:ts.AnyOf2<String, Float>, action:ChatAction):Result<Bool>;
+	@:post function sendChatAction(body:SendChatActionOptions):Result<Bool>;
 	// @:post function kickChatMember(chatId:ts.AnyOf2<String, Float>, userId:String):Result<Bool>;
 	// @:post function unbanChatMember(chatId:ts.AnyOf2<String, Float>, userId:String):Result<Bool>;
 	// @:post function restrictChatMember(chatId:ts.AnyOf2<String, Float>, userId:String, ?options:RestrictChatMemberOptions):Result<Bool>;
@@ -62,7 +62,7 @@ interface Api {
 	// @:post function stopMessageLiveLocation(?options:EditMessageCaptionOptions):ts.AnyOf2<Bool, MessageResult<>>;
 	// @:post function sendVenue(chatId:ts.AnyOf2<String, Float>, latitude:Float, longitude:Float, title:String, address:String, ?options:SendVenueOptions):Result<Message>;
 	// @:post function sendContact(chatId:ts.AnyOf2<String, Float>, phoneNumber:String, firstName:String, ?options:SendContactOptions):Result<Message>;
-	// @:post function getFile(fileId:String):Result<File>;
+	@:post function getFile(body:GetFileOptions):Result<File>;
 	// @:post function getFileLink(fileId:String):Result<String>;
 	// @:post function getFileStream(fileId:String):node.stream.Result<Readable>;
 	// @:post function downloadFile(fileId:String, downloadDir:String):Result<String>;
