@@ -21,7 +21,7 @@ interface Api {
 	@:post function setWebHook(body:SetWebHookOptions):Result<Bool>;
 	@:post function deleteWebHook():Result<Bool>;
 	@:post function getWebHookInfo():Result<WebhookInfo>;
-	// @:post function getUpdates(?options:GetUpdatesOptions):Result<Array<Update>>;
+	@:post function getUpdates(body:GetUpdatesOptions):Result<Array<Update>>;
 	// @:post function processUpdate(update:Update):Result<Void>;
 	@:post function sendMessage(body:SendMessageOptions):Result<Message>;
 	// @:post function answerInlineQuery(inlineQueryId:String, results:haxe.ds.ReadOnlyArray<InlineQueryResult>, ?options:AnswerInlineQueryOptions):Result<Bool>;
@@ -55,7 +55,7 @@ interface Api {
 	@:post function answerCallbackQuery(body:AnswerCallbackQueryOptions):Result<Bool>;
 	@:post function editMessageText(body:EditMessageTextOptions):Result<Message>; // TODO: or Bool
 	@:post function editMessageCaption(body:EditMessageCaptionOptions):Result<Message>; // TODO: or Bool
-	// @:post function editMessageReplyMarkup(replyMarkup:InlineKeyboardMarkup, ?options:EditMessageReplyMarkupOptions):ts.AnyOf2<Bool, MessageResult<>>;
+	@:post function editMessageReplyMarkup(body:EditMessageReplyMarkupOptions):Result<Message>; // TODO: or Bool
 	// @:post function getUserProfilePhotos(userId:ts.AnyOf2<String, Float>, ?options:GetUserProfilePhotosOptions):Result<UserProfilePhotos>;
 	// @:post function sendLocation(chatId:ts.AnyOf2<String, Float>, latitude:Float, longitude:Float, ?options:SendBasicOptions):Result<Message>;
 	// @:post function editMessageLiveLocation(latitude:Float, longitude:Float, ?options:EditMessageCaptionOptions):ts.AnyOf2<Bool, MessageResult<>>;
@@ -87,6 +87,6 @@ interface Api {
 	// @:post function setChatPermissions(chatId:ts.AnyOf2<String, Float>, chatPermissions:ChatPermissions):Result<Bool>;
 	// @:post function setChatAdministratorCustomTitle(chatId:ts.AnyOf2<String, Float>, userId:String, customTitle:String):Result<Bool>;
 	// @:post function getMyCommands():Array<BotCommandResult<>>;
-	// @:post function setMyCommands(commands:Array<BotCommand>):Result<Bool>;
+	@:post function setMyCommands(body:SetMyCommandsOptions):Result<Bool>;
 	
 }

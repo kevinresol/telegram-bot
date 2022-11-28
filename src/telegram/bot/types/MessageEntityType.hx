@@ -16,4 +16,5 @@ enum abstract MessageEntityType(String) to String {
 	final Pre = 'pre'; // (monowidth block), 
 	final TextLink = 'text_link'; // (for clickable text URLs), 
 	final TextMention = 'text_mention'; // (for users without usernames)
+	final Spoiler = 'spoiler'; // (spoiler message)
 }
