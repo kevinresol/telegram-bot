@@ -47,10 +47,11 @@ class Poller {
 								case null:
 								case last: offset = last.update_id + 1;
 							}
+							loop();
 						case Failure(e):
-							trace(e);
+							trace(Date.now().toString() + ': ' + e.data);
+							haxe.Timer.delay(loop, 1000);
 					}
-					loop();
 				});
 		}
 	}
